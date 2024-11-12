@@ -10,4 +10,7 @@ class Dashboard extends BaseController
         echo view('header', $this->data);
         echo view('footer', $this->data);
     }
+
+
+    
 }
