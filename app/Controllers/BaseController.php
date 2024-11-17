@@ -36,14 +36,14 @@ abstract class BaseController extends Controller
      * @var list<string>
      */
     protected $helpers = [];
-
+    
     /**
      * Be sure to declare properties for any property fetch you initialized.
      * The creation of dynamic property is deprecated in PHP 8.2.
      */
     protected $session;
     protected $data;
-
+    protected $db;
     /**
      * @return void
      */
@@ -51,7 +51,7 @@ abstract class BaseController extends Controller
     {
         // Do Not Edit This Line
         parent::initController($request, $response, $logger);
-
+        $this->db           = \Config\Database::connect();
         // Preload any models, libraries, etc, here.
 
         $this->session = \Config\Services::session();
@@ -59,4 +59,5 @@ abstract class BaseController extends Controller
         $this->data['app_title']        = 'Attendance System';
         $this->data['company_name']     = 'Some Company';
     }
+    
 }

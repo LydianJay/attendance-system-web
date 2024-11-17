@@ -27,13 +27,14 @@ import base64
 print('init')
 face_encodings = []
 names = []
+save_encodings = {}
 with open("python/face/encodings.json", "r") as f:
     encoding_list = json.load(f)
 
 for name, data in encoding_list.items():
     # print(name, data)
 
-
+    save_encodings[name] = data
     # image_bytes = base64.b64decode(bytes(str(data), 'utf-8'))
     # pil_image = Image.open(BytesIO(image_bytes)).convert("RGB")  # Ensure RGB format
     # numpy_image = np.array(pil_image)
@@ -72,11 +73,16 @@ class MyRequestHandler(BaseHTTPRequestHandler):
             print(results)
             self.send_header('Content-type', 'application/json')
             self.end_headers()
-            self.wfile.write(json.dumps(results).encode('utf-8'))
+            print(names[results.index(True)])
+            try:
+                val = { 'name' : names[results.index(True)], 'id' : results.index(True) + 1}
+                self.wfile.write(json.dumps(val).encode('utf-8'))
+            except:
+                self.wfile.write(json.dumps({'name' : '', 'id' : '0'}).encode('utf-8'))
         else:
-            self.send_header('Content-type', 'text/html')
+            self.send_header('Content-type', 'application/json')
             self.end_headers()
-            self.wfile.write('Face Not Registered!'.encode('utf-8'))
+            self.wfile.write(json.dumps({'name' : '', 'id' : '0'}).encode('utf-8'))
             
 
         # Parse query parameters (if any)
@@ -87,7 +93,6 @@ class MyRequestHandler(BaseHTTPRequestHandler):
         # else:
         #     params = {}
 
-        # Construct a response (just echoing the received query parameters here)
         
 
         # self.wfile.write(json.dumps(response).encode('utf-8'))
