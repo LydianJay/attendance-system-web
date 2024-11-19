@@ -22,17 +22,28 @@ class Dashboard extends BaseController
 
         $this->private_data['check_in'] 
         = $this->db->table('attendance')
-        ->selectCount('type')
         ->where('type', '1')
         ->get()
-        ->getResult()[0];
+        ->getResult();
 
         $this->private_data['check_out']
         = $this->db->table('attendance')
-        ->selectCount('type')
         ->where('type', '2')
         ->get()
-        ->getResult()[0];
+        ->getResult();
+
+        $this->private_data['checkIns'] = $this->db->table('attendance')
+        ->select('date, time') // Assuming your columns are named 'date' and 'time'
+        ->where('type', '1') // Check-ins only
+            ->get()
+            ->getResultArray();
+
+
+        $this->private_data['checkOuts'] = $this->db->table('attendance')
+        ->select('date, time') // Assuming your columns are named 'date' and 'time'
+        ->where('type', '2') // Check-ins only
+        ->get()
+        ->getResultArray();
     }
 
 
