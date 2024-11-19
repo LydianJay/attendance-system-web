@@ -59,5 +59,15 @@ abstract class BaseController extends Controller
         $this->data['app_title']        = 'Attendance System';
         $this->data['company_name']     = 'Some Company';
     }
+
+
+    public function setMessage($msg)
+    {
+        session()->setFlashdata('msg', $msg);
+    }
     
-}
+    public function getMessage()
+    {
+        return session()->getFlashdata('msg');
+    }
+}   
