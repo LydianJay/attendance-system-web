@@ -90,23 +90,17 @@
                 </a>
                 <ul id="forms-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
                     <li>
-                        <a href="forms-elements.html">
-                            <i class="bi bi-circle"></i><span>Monthly Report</span>
+                        <a href="<?php echo base_url() . 'report' ?>">
+                            <i class="bi bi-circle"></i><span>This month's report</span>
                         </a>
                     </li>
-                    <li>
-                        <a href="forms-layouts.html">
-                            <i class="bi bi-circle"></i><span>Weekly Report</span>
-                        </a>
-                    </li>
-
                 </ul>
             </li><!-- End Forms Nav -->
 
 
 
 
-            <li class="nav-heading">Pages</li>
+            <li class="nav-heading">Admin</li>
 
             <li class="nav-item">
                 <a class="nav-link collapsed" href="users-profile.html">
@@ -127,7 +121,7 @@
             <h1>Dashboard</h1>
             <nav>
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                    <li class="breadcrumb-item"><a href="<?php echo base_url() . '/dashboard' ?>">Home</a></li>
                     <li class="breadcrumb-item active">Dashboard</li>
                 </ol>
             </nav>

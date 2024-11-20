@@ -3,7 +3,7 @@
         <div class="card">
             <div class="card-body">
                 <h5 class="card-title">Attendance</h5>
-                <table class="table datatable">
+                <table class="table table-striped">
                     <thead>
                         <tr>
                             <?php foreach ($table_head as $head) { ?>

@@ -34,7 +34,7 @@
 <div class="container-fluid">
     <div class="card">
         <div class="card-body">
-            <p class="fs-3 text-bold card-title">Monthly Attendance</p>
+            <p class="fs-3 text-bold card-title"><?php echo date('F') ?> Attendance</p>
             <div id="reportsChart"></div>
 
             <script>
