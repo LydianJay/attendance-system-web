@@ -1,7 +1,7 @@
 <div class="row">
     <div class="col-lg-12">
         <div class="card">
-            <div class="card-body">
+            <div class="card-body" id="pdfContent">
                 <h5 class="card-title">Attendance</h5>
                 <table class="table table-striped">
                     <thead>
@@ -26,6 +26,9 @@
                     </tbody>
 
                 </table>
+            </div>
+            <div class="card-footer">
+                <button class="btn btn-primary btn-sm" id="download">PDF</button>
             </div>
         </div>
     </div>

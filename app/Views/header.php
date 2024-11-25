@@ -27,6 +27,8 @@
 
     <!-- Template Main CSS File -->
     <link href="<?php echo base_url() . 'thirdparty/niceadmin/' ?>assets/css/style.css" rel="stylesheet">
+    <!-- html2pdf -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
     <!-- =======================================================
   * Template Name: NiceAdmin
@@ -84,18 +86,7 @@
                 </ul>
             </li><!-- End Components Nav -->
 
-            <li class="nav-item">
-                <a class="nav-link collapsed" data-bs-target="#forms-nav" data-bs-toggle="collapse" href="#">
-                    <i class="bi bi-journal-text"></i><span>Report</span><i class="bi bi-chevron-down ms-auto"></i>
-                </a>
-                <ul id="forms-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
-                    <li>
-                        <a href="<?php echo base_url() . 'report' ?>">
-                            <i class="bi bi-circle"></i><span>This month's report</span>
-                        </a>
-                    </li>
-                </ul>
-            </li><!-- End Forms Nav -->
+          
 
 
 
